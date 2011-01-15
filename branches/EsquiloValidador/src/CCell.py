@@ -2,7 +2,7 @@
 # -*- coding: iso-8859-1 -*-
 
 #Esta classe contém não somente o valor e tipo da célula, como sua localização
-class ComplCell:
+class CCell:
     def __init__(self, cell):
         self._value = cell.value
         self._ctype = cell.ctype
