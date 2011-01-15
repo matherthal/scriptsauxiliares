@@ -2,7 +2,8 @@
 # -*- coding: iso-8859-1 -*-
 #import os, sys
 
-from ValidateTotal import ValidateTotalIncome, ValidateTotalExpense, ValidateTotalBalance
+from ValidateTotal import ValidateTotalIncome, ValidateTotalExpense, ValidateTotalBalance,\
+    FindErrorConstructionKeyExistence, StartValidade
 from GUI import FileDialog
 from ExcelAuxFuncs import SetBookCASH, SetBookCC
 import Tkinter
@@ -25,10 +26,16 @@ def main():
     print "|                              Matheus de Sá Erthal |"
     print "-----------------------------------------------------"
     print 
-    StartWorkBooks()
+    #StartWorkBooks()
+    StartValidade()
     ValidateTotalIncome()
     ValidateTotalExpense()
     ValidateTotalBalance()
+    err = FindErrorConstructionKeyExistence()
+    if err == None:
+        print 'Não foram encontrados erros da chave de contrução'
+    else:
+        print 'Erro encontrado nas chaves de construção da célula de linha: ', err[0] + 1, ', e coluna: ', err[1] + 1
         
 #import msvcrt
 #msvcrt.getch()
