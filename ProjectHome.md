@@ -1,0 +1,1 @@
+Vários tipos de scripts e programas que possam me auxiliar.
